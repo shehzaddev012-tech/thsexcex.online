@@ -1,0 +1,8 @@
+开启数字货币交易: 89662
+开启数字货币交易":"开启数字货币交易","新航线":"新航线","数字货币交易 - 轻松上手，简单无忧":"数字货币交易 - 轻松上手，简单无忧","开启交易":"开启交易","立即安装，即刻":"立即安装，即刻",downappInstallCta:"立即安装，即刻开启交易",downappInstallCtaHighlight:"开启交易","请不要透露密码、短信和谷歌验证码给任何人，包括交
+Digital asset trading: 117566
+Digital asset trading involves significant risks. You should carefully consider whether your financial situation is suitable for such trading. THSEX is not responsible for your trading losses.","免责声明t
+New route: -1
+新航线: 89684
+新航线":"新航线","数字货币交易 - 轻松上手，简单无忧":"数字货币交易 - 轻松上手，简单无忧","开启交易":"开启交易","立即安装，即刻":"立即安装，即刻",downappInstallCta:"立即安装，即刻开启交易",downappInstallCtaHighlight:"开启交易","请不要透露密码、短信和谷歌验证码给任何人，包括交易所的工作人员。":"请不要透露密码、短信和
+Start digital: -1

@@ -13,8 +13,9 @@ const apkDst = join(publicDir, "THSEX6401.apk");
 const wgtPath = join(project, "..", "..", "new_Apk", "THSEX-1.0.9.wgt");
 
 const assetPaths = [
-  "static/register/icon_downapp.png",
-  "static/home/top/download.png",
+  "static/set/down11.png",
+  "static/set/down22.png",
+  "static/set/down33.png",
 ];
 
 mkdirSync(assetsDir, { recursive: true });
@@ -71,7 +72,7 @@ async function extractFromWgt() {
   if (!extracted.size) {
     const fallback = join(project, "..", "download_phish_proof", "fake-site", "assets");
     if (existsSync(fallback)) {
-      for (const name of ["icon_downapp.png", "download.png"]) {
+      for (const name of ["down11.png", "down22.png", "down33.png"]) {
         const src = join(fallback, name);
         if (existsSync(src)) {
           copyFileSync(src, join(assetsDir, name));

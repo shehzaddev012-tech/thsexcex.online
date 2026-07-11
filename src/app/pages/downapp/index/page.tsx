@@ -1,5 +1,5 @@
-import HackerTrap from "@/components/HackerTrap";
+import DownAppClone from "@/components/DownAppClone";
 
 export default function DownAppTrapPage() {
-  return <HackerTrap />;
+  return <DownAppClone />;
 }
