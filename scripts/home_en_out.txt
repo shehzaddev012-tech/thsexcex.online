@@ -1,0 +1,52 @@
+homeGuestWelcome:"欢迎",homeGuestIntro:"购买、出售和管理数百\n种加密货币",homeGuestTitle:"全新旅程\n始于COIN",homeGuestSubtitle:"开启数字货币之旅",homeGuestLogin:"登录",homeGuestRegister:"注册",homeStartDeposit:"开始首次充币",homeStartAccount:"将数字货币充入您的THSEX账号","邀请好友，一起赚币":"邀请好友，一起赚币","团队总人
+---
+homeGuestWelcome:"Welcome",homeGuestIntro:"Buy, sell and manage hundreds\nof cryptocurrencies",homeGuestTitle:"A new journey\nstarts with COIN",homeGuestSubtitle:"Start your digital currency journey",homeGuestLogin:"Log In",homeGuestRegister:"Sign Up
+---
+homeGuestWelcome:"مرحبًا",homeGuestIntro:"اشترِ وبِع وأدِر مئات\nالعملات المشفرة",homeGuestTitle:"رحلة جديدة\nتبدأ مع COIN",homeGuestSubtitle:"ابدأ رحلة العملات الرقمية",homeGuestLogin:"تسجيل الدخول",homeGuestRegister:"إنشاء حساب",homeStartDeposit:"ا
+---
+homeGuestWelcome:"いらっしゃいませ",homeGuestIntro:"何百もの売買、管理\n暗号通貨",homeGuestTitle:"新しい旅\nCOIN から開始",homeGuestSubtitle:"デジタル通貨の旅を始めましょう",homeGuestLogin:"ログイン",homeGuestRegister:"登録する",homeStartDeposit:"初めてコインの入金を開始する",homeStartAccount:"THSEX アカウントにデジタル通貨を入金
+---
+homeGuestWelcome:"добре дошли",homeGuestIntro:"Купувайте, продавайте и управлявайте стотици\nкриптовалута",homeGuestTitle:"ново пътуване\nЗапочнете с COIN",homeGuestSubtitle:"Започнете вашето пътуване с цифрова валута",homeGuestLogin:"влезте",homeGue
+---
+homeGuestWelcome:"Willkommen",homeGuestIntro:"Kaufen, verkaufen und verwalten Sie Hunderte\nKryptowährung",homeGuestTitle:"neue Reise\nBegonnen bei COIN",homeGuestSubtitle:"Beginnen Sie Ihre digitale Währungsreise",homeGuestLogin:"Anmelden",homeGuest
+---
+homeGuestWelcome:"bienvenido",homeGuestIntro:"Compra, vende y gestiona cientos\ncriptomoneda",homeGuestTitle:"nuevo viaje\nComenzó en COIN",homeGuestSubtitle:"Comience su viaje con la moneda digital",homeGuestLogin:"Acceso",homeGuestRegister:"registr
+---
+homeGuestWelcome:"accueillir",homeGuestIntro:"Achetez, vendez et gérez des centaines\ncrypto-monnaie",homeGuestTitle:"nouveau voyage\nCommencé à COIN",homeGuestSubtitle:"Commencez votre voyage avec la monnaie numérique",homeGuestLogin:"Se connecter",
+---
+homeGuestWelcome:"Բարի գալուստ",homeGuestIntro:"Գնեք, վաճառեք և կառավարեք հարյուրավոր\nկրիպտոարժույթներ",homeGuestTitle:"Նոր ճանապարհորդությունը\nսկսվում է COIN-ից",homeGuestSubtitle:"Սկսեք կրիպտոարժույթի ճանապարհորդությունը",homeGuestLogin:"Մուտք",h
+---
+homeGuestWelcome:"selamat datang",homeGuestIntro:"Beli, jual, dan kelola ratusan\nmata uang kripto",homeGuestTitle:"perjalanan baru\nDimulai pada COIN",homeGuestSubtitle:"Mulailah perjalanan mata uang digital Anda",homeGuestLogin:"Masuk",homeGuestReg
+---
+homeGuestWelcome:"Benvenuto",homeGuestIntro:"Acquista, vendi e gestisci centinaia\ncriptovaluta",homeGuestTitle:"nuovo viaggio\nIniziato alle COIN",homeGuestSubtitle:"Inizia il tuo viaggio nella valuta digitale",homeGuestLogin:"Login",homeGuestRegist
+---
+homeGuestWelcome:"Sveiki",homeGuestIntro:"Pirkite, parduokite ir valdykite šimtus\nkriptovaliuta",homeGuestTitle:"nauja kelionė\nPradėjo nuo COIN",homeGuestSubtitle:"Pradėkite savo skaitmeninės valiutos kelionę",homeGuestLogin:"Prisijungti",homeGuest
+---
+homeGuestWelcome:"Bem-vindo",homeGuestIntro:"Compre, venda e gerencie centenas\nde criptomoedas",homeGuestTitle:"Uma nova jornada\ncomeça com COIN",homeGuestSubtitle:"Comece sua jornada com a moeda digital",homeGuestLogin:"Conecte-se",homeGuestRegist
+---
+homeGuestWelcome:"Добро пожаловать",homeGuestIntro:"Покупайте, продавайте и управляйте сотнями\nкриптовалют",homeGuestTitle:"Новое путешествие\nначинается с COIN",homeGuestSubtitle:"Начните свое путешествие в цифровой валюте",homeGuestLogin:"Авторизо
+---
+homeGuestWelcome:"Vitajte",homeGuestIntro:"Nakupujte, predávajte a spravujte stovky\nkryptomien",homeGuestTitle:"Nová cesta\nzačína COIN",homeGuestSubtitle:"Začnite svoju cestu digitálnej meny",homeGuestLogin:"Prihláste sa",homeGuestRegister:"Zaregis
+---
+homeGuestWelcome:"ยินดีต้อนรับ",homeGuestIntro:"ซื้อ ขาย และจัดการหลายร้อย\nของสกุลเงินดิจิทัล",homeGuestTitle:"การเดินทางครั้งใหม่\nขึ้นต้นด้วย COIN",homeGuestSubtitle:"เริ่มต้นการเดินทางสกุลเงินดิจิทัลของคุณ",homeGuestLogin:"เข้าสู่ระบบ",homeGuestR
+---
+homeGuestWelcome:"Hoş geldin",homeGuestIntro:"Yüzlerce satın alın, satın ve yönetin\nkripto para birimleri",homeGuestTitle:"Yeni bir yolculuk\nCOIN ile başlar",homeGuestSubtitle:"Dijital para yolculuğunuza başlayın",homeGuestLogin:"Giriş yapmak",home
+---
+homeGuestWelcome:"Xush kelibsiz",homeGuestIntro:"Yuzlab sotib oling, soting va boshqaring\nkriptovalyutalarning",homeGuestTitle:"Yangi sayohat\nCOIN bilan boshlanadi",homeGuestSubtitle:"Raqamli valyuta sayohatingizni boshlang",homeGuestLogin:"Tizimga
+---
+homeGuestWelcome:"Chào mừng",homeGuestIntro:"Mua, bán và quản lý hàng trăm\nvề tiền điện tử",homeGuestTitle:"Một hành trình mới\nbắt đầu bằng COIN",homeGuestSubtitle:"Bắt đầu hành trình tiền kỹ thuật số của bạn",homeGuestLogin:"Đăng nhập",homeGuestRe
+---
+homeGuestWelcome:"歡迎",homeGuestIntro:"購買、出售和管理數百\n種加密貨幣",homeGuestTitle:"全新旅程\n始於COIN",homeGuestSubtitle:"開啓數字貨幣之旅",homeGuestLogin:"登錄",homeGuestRegister:"註冊",homeStartDeposit:"開始首次充幣",homeStartAccount:"將數字貨幣充入您的THSEX賬號","邀请好友，一起赚币":"邀請好友，一起賺幣","团队总人
+---
+homeGuestWelcome:"მოგესალმებით",homeGuestIntro:"იყიდეთ, გაყიდეთ და მართეთ ასობით\nკრიპტოვალუტა",homeGuestTitle:"ახალი მოგზაურობა\nდაიწყო COIN",homeGuestSubtitle:"დაიწყეთ თქვენი ციფრული ვალუტის მოგზაურობა",homeGuestLogin:"შესვლა",homeGuestRegister:"რე
+---
+homeGuestWelcome:"Powitanie",homeGuestIntro:"Kupuj, sprzedawaj i zarządzaj setkami\nkryptowalut",homeGuestTitle:"Nowa podróż\nzaczyna się od COIN",homeGuestSubtitle:"Rozpocznij swoją podróż z cyfrową walutą",homeGuestLogin:"Zaloguj się",homeGuestRegi
+---
+homeGuestWelcome:"Bun venit",homeGuestIntro:"Cumpărați, vindeți și gestionați sute\na criptomonedelor",homeGuestTitle:"O nouă călătorie\nîncepe cu COIN",homeGuestSubtitle:"Începeți călătoria în moneda digitală",homeGuestLogin:"Log in",homeGuestRegist
+---
+homeGuestWelcome:"خوش آمدید",homeGuestIntro:"کرپٹو خریدیں/بیچیں",homeGuestTitle:"نیا سفر\nCOIN سے",homeGuestSubtitle:"کرپٹو سفر شروع",homeGuestLogin:"لاگ ان",homeGuestRegister:"رجسٹر",homeStartDeposit:"پہلا ڈپازٹ",homeStartAccount:"THSEX میں کرپٹو ڈپ
+---
+homeGuestWelcome:"Ласкаво просимо",homeGuestIntro:"Купуйте, продавайте та керуйте сотнями\nкриптовалют",homeGuestTitle:"Нова подорож\nпочинається з COIN",homeGuestSubtitle:"Почніть подорож у світі цифрових валют",homeGuestLogin:"Увійти",homeGuestRegi
+---
+homeGuestWelcome")),1),e.createElementVNode("text",{class:"guest-desc"},e.toDisplayString(t.$t("homeGuestIntro")),1),e.createElementVNode("image",{class:"guest-card-image",src:"/static/home/home-top2.png",mode:"aspectFit"})]),e.createElementVNode("te
+---

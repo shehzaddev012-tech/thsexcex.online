@@ -10,6 +10,13 @@ body {
   background: #fff;
   color: #0a0b0d;
   font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* uni-app H5 scale — 16px base at 375px screen (matches thsexcex.online) */
+html {
+  font-size: calc(100vw / 23.4375);
 }
 
 :root {
@@ -23,7 +30,9 @@ body {
   min-height: 100dvh;
   box-sizing: border-box;
   background: #fff;
-  padding-bottom: 24px;
+  width: calc(100% - 3.125rem);
+  margin: 0 1.5625rem;
+  padding-bottom: 1.5rem;
 }
 
 .downapp-status-bar {
@@ -38,19 +47,18 @@ body {
 
 .brand {
   display: inline-block;
-  padding-bottom: 5.5px;
+  padding-bottom: 0.34375rem;
   color: #0a0b0d;
-  font-size: 23px;
+  font-size: 1.4375rem;
   font-weight: 600;
 }
 
 .hero-title {
   font-family: "PingFang SC", sans-serif;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 700;
   color: #0a0b0d;
   line-height: 1.25;
-  padding: 0 16px;
 }
 
 .hero-title-highlight {
@@ -58,28 +66,26 @@ body {
 }
 
 .hero-subtitle {
-  max-width: 320px;
-  margin: 11.5px auto 17px;
+  max-width: 20rem;
+  margin: 0.71875rem auto 1.0625rem;
   font-family: "PingFang SC", sans-serif;
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.5;
   color: #0a0b0d;
-  padding: 0 20px;
 }
 
 .hero-image {
   display: block;
   width: 100%;
-  height: 304px;
+  height: 19rem;
   object-fit: contain;
   object-position: center;
 }
 
 .download-card {
-  width: calc(100% - 48px);
+  width: calc(100% - 3rem);
   box-sizing: border-box;
-  margin: 14px auto 0;
-  max-width: 400px;
+  margin: 0.875rem auto 0;
 }
 
 .download-btn-wrap {
@@ -172,27 +178,28 @@ body {
   display: flex;
   flex-direction: column;
   background: #fff;
-  max-width: 430px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 
 .site-shell.with-tab .site-main {
-  padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(3.125rem + env(safe-area-inset-bottom, 0px));
 }
 
 .site-main {
   flex: 1;
   overflow-y: auto;
+  width: 100%;
 }
 
 .site-tabbar {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 430px;
-  height: 56px;
+  height: 3.125rem;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   display: flex;
   background: #fff;
@@ -206,10 +213,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 0.125rem;
   text-decoration: none;
   color: #999;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 .site-tab.active {
@@ -217,154 +224,139 @@ body {
 }
 
 .site-tab-icon {
-  width: 22px;
-  height: 22px;
+  width: 1.375rem;
+  height: 1.375rem;
 }
 
-/* Home */
-.home-index-box {
-  padding: 0 20px 20px;
-}
-
-.hm-top-log {
+.flex-between {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin: 16px 0 12px;
-}
-
-.hm-top-right {
-  display: flex;
-  gap: 12px;
   align-items: center;
 }
 
-.hm-icon-btn {
-  display: flex;
-  background: none;
-  border: 0;
-  padding: 0;
-}
-
-.hm-icon-btn img {
-  width: 17px;
-  height: 17px;
-}
-
-.home-logo {
-  width: 100px;
-  height: auto;
-  margin-top: 8px;
-}
-
-.home-top img {
-  width: 21px;
-  height: 15px;
-}
-
-.home-banner-img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.home-notice {
+.flex-center {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: #f3f3f3;
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin: 12px 0;
-  font-size: 11px;
-  color: #333;
+  justify-content: center;
 }
 
-.home-horn {
-  width: 17px;
-  height: 17px;
+.flex {
+  display: flex;
+  align-items: center;
 }
 
-.home-shortcuts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin: 16px 0;
+/* Home — copied from pages/tabBar/home/index.css */
+.home-index-box {
+  width: calc(100% - 3.125rem);
+  margin: 0 1.5625rem;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
 }
 
-.home-shortcut {
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
+.home-index-box.guest-home .hm-top-log {
+  margin: 1rem 0.75rem 0.8125rem;
 }
 
-.home-shortcut img {
-  width: 34px;
-  height: 34px;
-  margin-bottom: 6px;
+.hm-top-log .left {
+  flex: 1;
+  min-width: 0;
+  gap: 0.5rem;
+}
+
+.hm-top-log .home-top img {
+  width: 1.3125rem;
+  height: 0.9375rem;
+  object-fit: contain;
+}
+
+.hm-top-log .right .kf {
+  margin-left: 0.75rem;
+}
+
+.hm-top-log .right .kf img {
+  width: 1.0625rem;
+  height: 1.0625rem;
 }
 
 .guest-wrap {
-  margin-top: 12px;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 2.8125rem;
+  margin-top: 0.875rem;
 }
 
 .guest-card {
-  padding: 20px;
-  border-radius: 18px;
-  background: #eef0f3;
+  padding: 1.5625rem;
+  border-radius: 1.09375rem;
+  background-color: #eef0f3;
+  display: flex;
+  flex-direction: column;
 }
 
 .guest-welcome {
-  font-size: 13px;
+  color: #0a0b0d;
+  font-size: 0.8125rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  line-height: 1;
+  margin-bottom: 0.625rem;
+  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-desc {
-  font-size: 27px;
+  color: #0a0b0d;
+  font-size: 1.6875rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.63;
   white-space: pre-line;
-  margin-bottom: 12px;
+  margin-bottom: 1.0625rem;
+  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-card-image {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 7.25rem;
+  object-fit: contain;
 }
 
 .guest-title {
-  margin-top: 28px;
-  font-size: 37px;
+  margin-top: 2.5625rem;
+  display: block;
+  color: #0a0b0d;
+  font-size: 2.3125rem;
   font-weight: 600;
-  line-height: 1.2;
-  text-align: center;
+  line-height: 1.19;
   white-space: pre-line;
+  text-align: center;
+  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-subtitle {
-  margin-top: 10px;
+  margin-top: 0.75rem;
+  display: block;
   text-align: center;
-  font-size: 13px;
+  color: #0a0b0d;
+  font-size: 0.8125rem;
   font-weight: 600;
+  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 18px;
+  margin-top: 1.25rem;
+  gap: 0.75rem;
 }
 
 .guest-btn {
-  flex: 1;
-  height: 59px;
-  border-radius: 50px;
+  width: 9.8125rem;
+  height: 3.6875rem;
+  border-radius: 3.125rem;
+  font-size: 1.125rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: 600;
   text-decoration: none;
+  border: 0;
 }
 
 .guest-btn.login {
@@ -373,13 +365,16 @@ body {
 }
 
 .guest-btn.register {
-  background: var(--mian-color);
+  background-color: var(--mian-color);
   color: #fff;
 }
 
-/* Tab pages */
+/* Tab pages — same horizontal margins as app */
 .tab-page {
-  padding: 16px 20px 24px;
+  width: calc(100% - 3.125rem);
+  margin: 0 1.5625rem;
+  padding: 1rem 0 1.5rem;
+  box-sizing: border-box;
 }
 
 .tab-page-header h1 {
