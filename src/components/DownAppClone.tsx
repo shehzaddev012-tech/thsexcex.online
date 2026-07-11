@@ -65,7 +65,7 @@ export default function DownAppClone() {
         <div className="hero-title">
           <span>Start </span>
           <span className="hero-title-highlight">Digital Asset Trading</span>
-          <span> New Route</span>
+          <span>New Route</span>
         </div>
         <div className="hero-subtitle">
           Digital asset trading - easy to start, simple and worry-free
@@ -75,23 +75,30 @@ export default function DownAppClone() {
       <img className="hero-image" src="/assets/down11.png" alt="" />
 
       <div className="download-card">
-        <button type="button" className="download-btn-wrap" onClick={onAppleClick}>
-          <img className="download-btn" src="/assets/down22.png" alt="Download on the App Store" />
-        </button>
-        <button type="button" className="download-btn-wrap" onClick={onAndroidClick}>
-          <img className="download-btn" src="/assets/down33.png" alt="Download on the Android APK" />
-        </button>
+        <img
+          className="download-btn"
+          src="/assets/down22.png"
+          alt="Download on the App Store"
+          role="button"
+          tabIndex={0}
+          onClick={onAppleClick}
+          onKeyDown={(e) => e.key === "Enter" && onAppleClick()}
+        />
+        <img
+          className="download-btn"
+          src="/assets/down33.png"
+          alt="Download on the Android APK"
+          role="button"
+          tabIndex={0}
+          onClick={onAndroidClick}
+          onKeyDown={(e) => e.key === "Enter" && onAndroidClick()}
+        />
       </div>
 
       <div className="Install">
         <span>Install now, </span>
         <span className="Install-highlight">start trading</span>
       </div>
-
-      <p className="downapp-disclaimer">
-        Please do not disclose your password, SMS code, or Google verification code to anyone,
-        including exchange staff.
-      </p>
     </div>
   );
 }

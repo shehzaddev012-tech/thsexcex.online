@@ -2,6 +2,7 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { createInflateRaw } from "zlib";
+import { execSync } from "child_process";
 
 const root = dirname(fileURLToPath(import.meta.url));
 const project = join(root, "..");
@@ -70,18 +71,30 @@ async function extractFromWgt() {
   }
 
   if (!extracted.size) {
-    const fallback = join(project, "..", "download_phish_proof", "fake-site", "assets");
-    if (existsSync(fallback)) {
-      for (const name of ["down11.png", "down22.png", "down33.png"]) {
-        const src = join(fallback, name);
-        if (existsSync(src)) {
-          copyFileSync(src, join(assetsDir, name));
-          console.log("copied fallback asset", name);
+    try {
+      execSync(`python "${join(root, "extract_downapp_png.py")}"`, { stdio: "inherit" });
+    } catch {
+      const fallback = join(project, "..", "download_phish_proof", "fake-site", "assets");
+      if (existsSync(fallback)) {
+        for (const name of ["down11.png", "down22.png", "down33.png"]) {
+          const src = join(fallback, name);
+          if (existsSync(src)) {
+            copyFileSync(src, join(assetsDir, name));
+            console.log("copied fallback asset", name);
+          }
         }
+      } else {
+        console.warn("No downapp PNG assets — download page will look broken");
       }
-    } else {
-      console.warn("No assets extracted — page uses CSS fallback buttons");
     }
+  }
+}
+
+function extractWithPython() {
+  try {
+    execSync(`python "${join(root, "extract_downapp_png.py")}"`, { stdio: "inherit" });
+  } catch (e) {
+    console.warn("Python asset extract failed");
   }
 }
 
