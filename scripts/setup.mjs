@@ -109,13 +109,34 @@ function inflate(data) {
   });
 }
 
-if (!existsSync(apkSrc)) {
-  console.error("Missing", apkSrc, "— run: python build_both_apks.py");
+function ensureApk() {
+  if (existsSync(apkSrc)) {
+    copyFileSync(apkSrc, apkDst);
+    console.log("OK copied APK -> public/THSEX6401.apk");
+    return;
+  }
+
+  if (existsSync(apkDst)) {
+    console.log("OK using committed APK -> public/THSEX6401.apk");
+    return;
+  }
+
+  console.error("Missing APK — add public/THSEX6401.apk to git or run: python build_both_apks.py");
   process.exit(1);
 }
 
-copyFileSync(apkSrc, apkDst);
-console.log("OK copied APK -> public/THSEX6401.apk");
+function downappAssetsReady() {
+  return ["down11.png", "down22.png", "down33.png"].every((name) =>
+    existsSync(join(assetsDir, name))
+  );
+}
 
-await extractFromWgt();
+ensureApk();
+
+if (!downappAssetsReady()) {
+  await extractFromWgt();
+} else {
+  console.log("OK downapp PNG assets already present");
+}
+
 console.log("Setup complete");
