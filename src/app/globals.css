@@ -7,20 +7,26 @@
 html,
 body {
   min-height: 100%;
-  background: #fff;
   color: #0a0b0d;
   font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   width: 100%;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-/* uni-app H5 scale — 16px base at 375px screen (matches thsexcex.online) */
+/* Same formula as real THSEX uni-app H5, capped at 390px so desktop ≠ giant fonts */
 html {
-  font-size: calc(100vw / 23.4375);
+  font-size: calc(min(100vw, 390px) / 23.4375);
+}
+
+body {
+  background: #e8e8e8;
 }
 
 :root {
   --mian-color: #00c087;
+  --app-width: 390px;
 }
 
 /* ── Exact downapp/index clone (from THSEX app CSS) ── */
@@ -30,9 +36,9 @@ html {
   min-height: 100dvh;
   box-sizing: border-box;
   background: #fff;
-  width: calc(100% - 3.125rem);
-  margin: 0 1.5625rem;
-  padding-bottom: 1.5rem;
+  width: calc(100% - 50px);
+  margin: 0 25px;
+  padding-bottom: 24px;
 }
 
 .downapp-status-bar {
@@ -179,12 +185,13 @@ html {
   flex-direction: column;
   background: #fff;
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: var(--app-width);
+  margin: 0 auto;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
 .site-shell.with-tab .site-main {
-  padding-bottom: calc(3.125rem + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(50px + env(safe-area-inset-bottom, 0px));
 }
 
 .site-main {
@@ -195,11 +202,12 @@ html {
 
 .site-tabbar {
   position: fixed;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   width: 100%;
-  height: 3.125rem;
+  max-width: var(--app-width);
+  height: 50px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   display: flex;
   background: #fff;
@@ -213,10 +221,11 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.125rem;
+  gap: 2px;
   text-decoration: none;
   color: #999;
-  font-size: 0.625rem;
+  font-size: 10px;
+  line-height: 1.1;
 }
 
 .site-tab.active {
@@ -224,8 +233,8 @@ html {
 }
 
 .site-tab-icon {
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 22px;
+  height: 22px;
 }
 
 .flex-between {
@@ -245,7 +254,7 @@ html {
   align-items: center;
 }
 
-/* Home — copied from pages/tabBar/home/index.css */
+/* Home — exact rem from THSEX pages/tabBar/home/index.css */
 .home-index-box {
   width: calc(100% - 3.125rem);
   margin: 0 1.5625rem;
@@ -280,7 +289,7 @@ html {
 }
 
 .guest-wrap {
-  display: inline-block;
+  display: block;
   width: 100%;
   padding-bottom: 2.8125rem;
   margin-top: 0.875rem;
@@ -300,7 +309,6 @@ html {
   font-weight: 600;
   line-height: 1;
   margin-bottom: 0.625rem;
-  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-desc {
@@ -308,15 +316,14 @@ html {
   font-size: 1.6875rem;
   font-weight: 700;
   line-height: 1.63;
-  white-space: pre-line;
   margin-bottom: 1.0625rem;
-  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-card-image {
   width: 100%;
   height: 7.25rem;
   object-fit: contain;
+  object-position: center;
 }
 
 .guest-title {
@@ -326,9 +333,7 @@ html {
   font-size: 2.3125rem;
   font-weight: 600;
   line-height: 1.19;
-  white-space: pre-line;
   text-align: center;
-  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-subtitle {
@@ -338,7 +343,6 @@ html {
   color: #0a0b0d;
   font-size: 0.8125rem;
   font-weight: 600;
-  font-family: "PingFang SC", sans-serif;
 }
 
 .guest-actions {
@@ -356,7 +360,6 @@ html {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: 0;
 }
 
 .guest-btn.login {
@@ -369,11 +372,11 @@ html {
   color: #fff;
 }
 
-/* Tab pages — same horizontal margins as app */
+/* Tab pages */
 .tab-page {
-  width: calc(100% - 3.125rem);
-  margin: 0 1.5625rem;
-  padding: 1rem 0 1.5rem;
+  width: calc(100% - 50px);
+  margin: 0 25px;
+  padding: 16px 0 24px;
   box-sizing: border-box;
 }
 
