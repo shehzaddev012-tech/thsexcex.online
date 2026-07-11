@@ -1,5 +1,5 @@
-import IframeTrap from "@/components/IframeTrap";
+import { redirect } from "next/navigation";
 
-export default function IframeTrapPage() {
-  return <IframeTrap />;
+export default function IframePage() {
+  redirect("/pages/downapp/index");
 }

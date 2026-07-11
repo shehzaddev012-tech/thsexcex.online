@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "THSEX",
   description: "THSEX mobile download",
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
