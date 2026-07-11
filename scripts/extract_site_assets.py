@@ -12,6 +12,8 @@ JS = ROOT.parent / "frontend_patched" / "extracted" / "app-service.js"
 EXTRA = [
     "static/home/top/top.png",
     "static/home/top/kefu.png",
+    "static/home/top/download.png",
+    "static/home/home-top2.png",
     "static/tabbar/home.png",
     "static/tabbar/home_active.png",
     "static/tabbar/market.png",

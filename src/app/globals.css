@@ -15,18 +15,17 @@ body {
   text-size-adjust: 100%;
 }
 
-/* Same formula as real THSEX uni-app H5, capped at 390px so desktop ≠ giant fonts */
+/* Real THSEX H5 scaling — same as thsexcex.shop */
 html {
-  font-size: calc(min(100vw, 390px) / 23.4375);
+  font-size: calc(100vw / 23.4375);
 }
 
 body {
-  background: #e8e8e8;
+  background: #fff;
 }
 
 :root {
-  --mian-color: #00c087;
-  --app-width: 390px;
+  --mian-color: #cc131a;
 }
 
 /* ── Exact downapp/index clone (from THSEX app CSS) ── */
@@ -185,9 +184,6 @@ body {
   flex-direction: column;
   background: #fff;
   width: 100%;
-  max-width: var(--app-width);
-  margin: 0 auto;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
 .site-shell.with-tab .site-main {
@@ -202,11 +198,10 @@ body {
 
 .site-tabbar {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   bottom: 0;
   width: 100%;
-  max-width: var(--app-width);
   height: 50px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   display: flex;
@@ -279,13 +274,30 @@ body {
   object-fit: contain;
 }
 
+.hm-top-log .right {
+  flex-shrink: 0;
+  align-items: center;
+}
+
 .hm-top-log .right .kf {
+  margin-left: 0;
+}
+
+.hm-top-log .right .download {
   margin-left: 0.75rem;
+  text-decoration: none;
+}
+
+.hm-top-log .right .download img {
+  width: 1.0625rem;
+  height: 0.96875rem;
+  object-fit: contain;
 }
 
 .hm-top-log .right .kf img {
   width: 1.0625rem;
   height: 1.0625rem;
+  object-fit: contain;
 }
 
 .guest-wrap {

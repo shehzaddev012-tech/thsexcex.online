@@ -15,6 +15,9 @@ export default function HomeGuest() {
           <div className="kf flex-center">
             <img src="/assets/kefu.png" alt="" />
           </div>
+          <Link href={ROUTES.download} className="download flex-center">
+            <img src="/assets/download.png" alt="" />
+          </Link>
         </div>
       </div>
 
