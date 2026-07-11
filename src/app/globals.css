@@ -15,17 +15,19 @@ body {
   text-size-adjust: 100%;
 }
 
-/* Real THSEX H5 scaling — same as thsexcex.shop */
+:root {
+  --mian-color: #cc131a;
+  /* THSEX H5 design width — fonts scale to this max, never desktop 100vw */
+  --app-max: 430px;
+}
+
+/* Phone: same as thsexcex.online. Desktop: capped so text stays normal size */
 html {
-  font-size: calc(100vw / 23.4375);
+  font-size: calc(min(100vw, var(--app-max)) / 23.4375);
 }
 
 body {
   background: #fff;
-}
-
-:root {
-  --mian-color: #cc131a;
 }
 
 /* ── Exact downapp/index clone (from THSEX app CSS) ── */
@@ -184,6 +186,8 @@ body {
   flex-direction: column;
   background: #fff;
   width: 100%;
+  max-width: var(--app-max);
+  margin: 0 auto;
 }
 
 .site-shell.with-tab .site-main {
@@ -198,10 +202,11 @@ body {
 
 .site-tabbar {
   position: fixed;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   width: 100%;
+  max-width: var(--app-max);
   height: 50px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   display: flex;
