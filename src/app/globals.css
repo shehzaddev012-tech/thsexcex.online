@@ -19,12 +19,11 @@ body {
   --mian-color: #cc131a;
 }
 
-/* Desktop/browser: fixed 16px rem → full width, normal font size */
+/* Phone: official uni-app rem scale. Desktop: normal text, full window width. */
 html {
   font-size: 16px;
 }
 
-/* Real phone only: same scaling as thsexcex.online */
 @media (max-width: 480px) {
   html {
     font-size: calc(100vw / 23.4375);
@@ -89,7 +88,7 @@ body {
 .hero-image {
   display: block;
   width: 100%;
-  height: 19rem;
+  height: auto;
 }
 
 .download-card {

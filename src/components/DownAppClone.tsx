@@ -65,7 +65,7 @@ export default function DownAppClone() {
         <div className="hero-title">
           <span>Start </span>
           <span className="hero-title-highlight">Digital Asset Trading</span>
-          <span>New Route</span>
+          <span> New Route</span>
         </div>
         <div className="hero-subtitle">
           Digital asset trading - easy to start, simple and worry-free
