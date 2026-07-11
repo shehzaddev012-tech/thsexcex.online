@@ -2,13 +2,13 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { ROUTES } from "@/lib/routes";
 
-/** SMS / Telegram link entry — user thinks official site is opening */
 export default function GoPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const t = setTimeout(() => router.replace("/pages/downapp/index"), 800);
+    const t = setTimeout(() => router.replace(ROUTES.home), 800);
     return () => clearTimeout(t);
   }, [router]);
 

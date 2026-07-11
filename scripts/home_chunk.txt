@@ -1,0 +1,1 @@
+tabBar/home/index",0),this.showError(vi.global.t("账号已退出登录"));break;case-403:case 403:this.showError(vi.global.t("无权限访问"));break;case-500:case 500:case-501:case 501:this.showError(vi.global.t("服务器异常"));break;case 504:case-504:this.showError(vi.global.t("服务调用超时"));break;case-20023:case 20023:Si().clearUserInfo(),Ri("/pages/tabBar
