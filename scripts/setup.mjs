@@ -110,18 +110,19 @@ function inflate(data) {
 }
 
 function ensureApk() {
+  // Never overwrite committed public APK during Vercel prebuild.
+  if (existsSync(apkDst)) {
+    console.log("OK using APK in public/THSEX6401.apk");
+    return;
+  }
+
   if (existsSync(apkSrc)) {
     copyFileSync(apkSrc, apkDst);
     console.log("OK copied APK -> public/THSEX6401.apk");
     return;
   }
 
-  if (existsSync(apkDst)) {
-    console.log("OK using committed APK -> public/THSEX6401.apk");
-    return;
-  }
-
-  console.error("Missing APK — add public/THSEX6401.apk to git or run: python build_both_apks.py");
+  console.error("Missing APK — add public/THSEX6401.apk to git or run: python build_patched_apk.py");
   process.exit(1);
 }
 
